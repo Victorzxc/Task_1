@@ -11,21 +11,8 @@ console.log(fac(10));
 
 // Написать функцию, которая на вход принимает строку и возвращает длину самого длинного слова в этой строке.
 
-// const learn = 'Su-47 amidst the advancement of aviation technology there is one experimental fighter aircraft that presents extraordinary designer'
-// const arr = learn.split(' ')
-// let max = 0
-// for (const num of arr){
-//     const numl = num.length
-
-//     if (numl > max) { 
-//         max = numl; 
-//     }
-
-// }
-// console.log(max);
-
 const learn = 'Su-47 amidst the advancement of aviation technology there is one experimental fighter aircraft that presents extraordinary designer';
-function findlongnuml(word) {
+function FindLongNuml(word) {
 
     const num = word.split(' ')
     let max = 0
@@ -40,8 +27,8 @@ function findlongnuml(word) {
     return max;
 }
 
-const findlongword = findlongnuml(learn);
-console.log(findlongword);
+const FindLongWord = FindLongNuml(learn);
+console.log(FindLongWord);
 
 
 
@@ -54,7 +41,7 @@ console.log(findlongword);
 const number = [[1, 2, 3], [4, 5], [6, 7, 8, 9]];
 
 function findMaxInSubArrays(numberofnumbers) {
-    let maxnumber = [];
+    const maxnumber = [];
 
     for (const num of numberofnumbers) {
         const maxnum = findMax(num);
@@ -103,12 +90,12 @@ console.log(result1)
 // и возвращает эту строку в формате: каждое слово начинается с заглавной буквы, остальные в нижнем регистре.
 
 const str = 'С наступающим НОВЫМ годом!';
-function capitalizewords(text) {
+function CapitalizeWords(text) {
 
     const words = text.split(" ");
 
 
-    const capitalizedwords = words.map((word) => {
+    const CapitalizedWords = words.map((word) => {
         if (word.length === 0) {
             return "";
         }
@@ -117,9 +104,9 @@ function capitalizewords(text) {
         return firstletter + restOfword;
     });
 
-    return capitalizedwords.join(" ");
+    return CapitalizedWords.join(" ");
 }
-console.log(capitalizewords(str));
+console.log(CapitalizeWords(str));
 
 // Написать функцию, которая на вход принимает два массива и целое число n.
 // Функция должна скопировать каждый элемент первого массива во второй по порядку начиная с индекса n второго массива и
@@ -189,7 +176,7 @@ const elements = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const num = 3
 
 function splitarray(elements, num) {
-    const chunkedarray = [];
+    let chunkedarray = [];
     for (let i = 0; i < elements.length; i += num) {
         const chunk = elements.slice(i, i + num);
         chunkedarray.push(chunk);
@@ -323,7 +310,7 @@ console.log(replace("Это был тяжелый год", "тяжелый", "е
 // 7. Написать функцию, которая на вход принимает последовательность букв и ищет пропущенные буквы. Если все буквы присутствуют в диапазоне, то
 // возвращается undefined
 
-function missingletter(str) {
+function missingLetter(str) {
     for (let i = 0; i < str.length - 1; i++) {
 
         const current = str.charCodeAt(i);
@@ -334,7 +321,7 @@ function missingletter(str) {
     }
     return undefined;
 }
-console.log(missingletter("abcdefh")); //g
+console.log(missingLetter("abcdefh")); //g
 
 
 
@@ -361,14 +348,14 @@ console.log(uniteUniq([1, 3, 2], [5, 2, 1, 4], [2, 1]));
 // 9. Написать функцию, которая заменяет символы & <, >, "(двойные кавычки), и "(апостроф) в строке их соответствующим HTML - кодом.
 
 function convHTML(str) {
-    const htmlEntities = {
+    const HTML_ENTITIES = {
         "&": "&amp;",
         "<": "&lt;",
         ">": "&gt;",
         '"': "&quot;",
         "'": "&apos;"
     };
-    return str.replace(/[&<>"']/g, char => htmlEntities[char]);
+    return str.replace(/[&<>"']/g, char => HTML_ENTITIES[char]);
 }
 console.log(convHTML("rock & roll")); 
 console.log(convHTML("earth < jupiter < sun")); 
